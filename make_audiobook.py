@@ -27,7 +27,7 @@ def book_to_text(book_file):
         return pypandoc.convert_file(book_file, "plain", extra_args=["--wrap=none"])
     except RuntimeError:
         print("Format not recognized. Treating as plain text...")
-        with open(book_file, encoding="utf-8") as book:
+        with open(book_file, encoding="ansi") as book:
             return book.read()
 
 
@@ -40,10 +40,10 @@ def clean_text_chunk(text_chunk):
 
 
 class Narrator:
-    def __init__(self, voice_name="en-US-Wavenet-F"):
+    def __init__(self, voice_name="ru-RU-Wavenet-E"):
         self.client = texttospeech.TextToSpeechClient()
         self.voice = texttospeech.VoiceSelectionParams(
-            language_code="en-US", name=voice_name
+            language_code="ru-RU", name=voice_name
         )
         self.audio_config = texttospeech.AudioConfig(
             audio_encoding=texttospeech.AudioEncoding.MP3
@@ -53,7 +53,7 @@ class Narrator:
         self._requests_this_minute = 0
         self._chars_this_minute = 0
 
-    def print_voice_names(self, lang="en"):
+    def print_voice_names(self, lang="ru"):
         print("Available voices for language {}:".format(lang))
         for voice in self.client.list_voices().voices:
             if voice.name.startswith(lang):

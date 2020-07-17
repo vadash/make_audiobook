@@ -1,3 +1,3 @@
-make_audiobook.py GeographyofBliss_oneChapter.epub
+make_audiobook.py test_rus.txt
 
 pause
