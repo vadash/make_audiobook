@@ -1,11 +1,17 @@
 # make_audiobook
 makes audiobook using paid google TTS
 
-# dep
+# install
+
+register free 1 year google cloud trial
+
+install python 3.9.x
 
 pip install google-cloud-datastore pandoc pypandoc tqdm
 
 https://github.com/googleapis/python-texttospeech/tree/master/samples/snippets
+
+add GOOGLE_APPLICATION_CREDENTIALS with json key path
 
 https://github.com/jgm/pandoc/releases
 
