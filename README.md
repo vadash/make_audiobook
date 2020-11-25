@@ -7,6 +7,8 @@ pip install google-cloud-datastore pandoc pypandoc tqdm
 
 https://github.com/googleapis/python-texttospeech/tree/master/samples/snippets
 
+https://github.com/jgm/pandoc/releases
+
 # credits
 
 https://gist.github.com/madebyollin/508930c86fa12e1a70e32d91411485a8
